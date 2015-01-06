@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/pandora/SourceCode/qualcomm/8960/hardware/Android_GPSDriverLibrary_SourceCode/ublox'
+let g:netrw_dirhist_2='/home/pandora'
+let g:netrw_dirhist_3='/home/pandora/SourceCode/qualcomm/8960/kernel/drivers/leds'
+let g:netrw_dirhist_4='/home/pandora/SourceCode/qualcomm/8960/packages/apps/Settings/res/values'
+let g:netrw_dirhist_5='/home/pandora/SourceCode/Po_tmp/MorphoSmart_SDK_6.6.6.0_Android_3.1/PC/Sdk_linux/Android/SDK_java'
+let g:netrw_dirhist_6='/home/pandora/SourceCode/qualcomm/8960/packages/apps/EngineerMode/src'
+let g:netrw_dirhist_7='/etc/cron.daily'
