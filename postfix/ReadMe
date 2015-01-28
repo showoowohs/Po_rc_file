@@ -1,6 +1,6 @@
 Reference:
 https://rtcamp.com/tutorials/linux/ubuntu-postfix-gmail-smtp/
-
+http://www.ubuntucafe.in/2013/10/configure-postfix-to-use-gmail-smtp-on.html
 
 1. 
 sudo apt-get install postfix mailutils libsasl2-2 ca-certificates libsasl2-modules
