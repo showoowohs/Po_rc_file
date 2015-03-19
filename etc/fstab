@@ -11,3 +11,4 @@ UUID=6100175f-5d2c-4e36-9462-6261d7205255 /               ext4    errors=remount
 # swap was on /dev/sda5 during installation
 UUID=a809ad3e-6deb-43f2-8d81-1861b4cadbdd none            swap    sw              0       0
 /dev/fd0        /media/floppy0  auto    rw,user,noauto,exec,utf8 0       0
+/dev/sda3       /home/pandora/Disk_100G  auto    defaults 0       0
