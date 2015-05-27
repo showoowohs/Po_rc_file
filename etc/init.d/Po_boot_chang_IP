@@ -1,0 +1,72 @@
+#!/bin/bash
+
+# boot call scrip setup
+# 1. create a script 
+# example: new Po_boot_chang_IP
+#
+# 2. link script to /etc/init.d
+# example: sudo ln -s /home/pandora/bin/Po_boot_chang_IP /etc/init.d/Po_boot_chang_IP
+#
+# 3. through command 將 Po_boot_chang_IP 放到各個 rc*.d 的目錄裡去，並設定好啟動順序
+# example: sudo update-rc.d Po_boot_chang_IP defaults 99
+# P.S 如果 can`t ping google, 可試著 sudo vim /etc/network/interfaces 添加dns-nameservers 8.8.8.8 8.8.4.4 在 reboot 試試
+
+set_wlan0_ip(){
+  # for server PC
+  sudo ifconfig wlan0 192.168.1.4
+}
+
+get_wlan0_ip(){
+  # for server PC
+  ifconfig wlan0 > /home/pandora/Po_wlan0_ip 
+}
+
+set_eth0_ip(){
+  # for show PC
+  sudo ifconfig eth0 192.168.1.2
+}
+
+get_eth0_ip(){
+  # for show PC
+  ifconfig eth0 > /home/pandora/Po_eth0_ip 
+}
+
+check_user(){
+  # 1.1 read file
+  filename='/etc/hostname'
+  exec < $filename
+    
+  while read line
+     do
+       #echo "$line"
+       user_name=$line
+  done
+
+}
+
+user_name="unknown"
+
+# 1. check user
+check_user
+#echo "$user_name"
+
+# 2. set IP address
+if [ "$user_name" = "build-server" ];then
+
+   # set IP to build-server
+   echo "set IP to build-server" 
+   set_wlan0_ip
+   #get_wlan0_ip
+
+elif [ "$user_name" = "show-work" ]; then
+
+   # set IP to show-work
+   echo "set IP to show-work" 
+   set_eth0_ip
+   #get_eth0_ip
+
+else
+   echo "user is unknown, not thing"
+fi
+
+
