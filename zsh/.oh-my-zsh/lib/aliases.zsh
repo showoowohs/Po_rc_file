@@ -8,7 +8,12 @@ function uusb() {
 	DEVs="`dmesg | grep "sd.: sd" | tail -n 1 | sed -e 's/.*sd.: //g' | sed -e 's/ <.*//g'`"
 	C=1
 	for i in $DEVs; do
-		sudo umount $HOME/usb$C && rmdir  $HOME/usb$C
+		if [ -d $HOME/usb$C ]; then
+			sudo umount $HOME/usb$C && rmdir  $HOME/usb$C
+		else
+			sudo umount /dev/$DEVs
+		fi
+
 		C=$(( C + 1 ))
 	done
 }
